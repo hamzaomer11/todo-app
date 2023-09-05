@@ -16,10 +16,17 @@
             <div class="pt-1 pb-1">
                 <div class="container">
                     <div class="flex justify-space">
-                        <div class="new-item">
-                            <button type="submit" class="add-item">
+                        <div class="new-item" onclick="openForm()">
+                            <button type="button" class="add-item">
                                 <i class="material-icons">add</i>
                             </button>
+                        </div>
+                        <div class="form-popup" id="myForm">
+                            <form class="form-container">                              
+                                <input type="text" placeholder="Add Notes" name="text" required>
+                                <button type="submit" class="btn">Post</button>
+                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                            </form>
                         </div>
                         <div class="search-container mt-1">
                             <div class="search">
