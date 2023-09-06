@@ -97,7 +97,6 @@ button.add-item {
 
 .material-icons {
     font-size: 35px;
-    pointer-events: auto;
 }
 
 .open-button {
@@ -166,3 +165,16 @@ button.add-item {
   .form-container .btn:hover, .open-button:hover {
     opacity: 1;
   }
+
+#note {
+  padding-top: 1.25rem;
+  padding-left: 1.25rem;
+  list-style-type: none;
+}
+
+#trash {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+}
