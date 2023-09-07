@@ -46,3 +46,7 @@ const deleteNote = (btn) => {
     localStorage.setItem("notes", JSON.stringify(notesStorage));
     el.remove();
 };
+
+function scrollSection() {
+    document.getElementById("scroll-container").style.overflow = "scroll";
+  }
