@@ -157,7 +157,7 @@ button.add-item {
   
   /* Add a red background color to the cancel button */
   .form-container .cancel {
-    background-color: red;
+    background-color: palegreen;
   }
   
   /* Add some hover effects to buttons */
