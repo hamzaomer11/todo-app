@@ -37,6 +37,25 @@ getNotes.forEach((note) => {
     listBuilder(note);
 });
 
+document.querySelector('#search-term').
+addEventListener('input', filterFunction)
+
+function filterFunction() {
+    const search = document.querySelector('#search-term');
+
+    const filter = search.value.toLowerCase();
+    const list = document.querySelectorAll('#note');
+
+    list.forEach((item) => {
+        let text = item.textContent;
+        if(text.toLowerCase().includes(filter.toLowerCase())) {
+            item.style.display = '';
+        } else {
+            item.style.display = none;
+        }
+    })
+}
+
 
 // Deletes notes on page
 const deleteNote = (btn) => {
@@ -49,4 +68,6 @@ const deleteNote = (btn) => {
 
 function scrollSection() {
     document.getElementById("scroll-container").style.overflow = "scroll";
-  }
+}
+
+
