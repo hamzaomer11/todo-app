@@ -51,11 +51,11 @@ function scrollSection() {
 
 function renderNotes() {
     const noteList = document.getElementById('note');
-    noteList.innerHTML = ''; // Clear the previous list
-  
+    noteList.innerHTML = '' // Clear the previous list
+    
     notesStorage.forEach((note) => {
       const li = document.createElement('li');
-      li.textContent = note;
+      li.textContent = note;      
       noteList.appendChild(li);
     });
 }
