@@ -7,7 +7,6 @@ function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
 
-
 const notes = document.getElementById("note");
 const addNotes = document.getElementById("add-notes");
 
@@ -37,26 +36,6 @@ getNotes.forEach((note) => {
     listBuilder(note);
 });
 
-document.querySelector('#search-term').
-addEventListener('input', filterFunction)
-
-function filterFunction() {
-    const search = document.querySelector('#search-term');
-
-    const filter = search.value.toLowerCase();
-    const list = document.querySelectorAll('#note');
-
-    list.forEach((item) => {
-        let text = item.textContent;
-        if(text.toLowerCase().includes(filter.toLowerCase())) {
-            item.style.display = '';
-        } else {
-            item.style.display = none;
-        }
-    })
-}
-
-
 // Deletes notes on page
 const deleteNote = (btn) => {
     let el = btn.parentNode;
@@ -70,4 +49,27 @@ function scrollSection() {
     document.getElementById("scroll-container").style.overflow = "scroll";
 }
 
+function renderNotes() {
+    const noteList = document.getElementById('note');
+    noteList.innerHTML = ''; // Clear the previous list
+  
+    notesStorage.forEach((note) => {
+      const li = document.createElement('li');
+      li.textContent = note;
+      noteList.appendChild(li);
+    });
+}
 
+function search() {
+    const searchTerm = document.getElementById('search-term').value.toLowerCase();
+  
+    const filteredNotes = notesStorage.filter((note) =>
+      note.toLowerCase().includes(searchTerm)
+    );
+  
+    // Update the DOM with the filtered notes
+    notesStorage = filteredNotes;
+    renderNotes();
+}
+
+renderNotes();
