@@ -66,7 +66,6 @@ function search() {
     const filteredNotes = notesStorage.filter((note) =>
       note.toLowerCase().includes(searchTerm)
     );
-  
     // Update the DOM with the filtered notes
     notesStorage = filteredNotes;
     renderNotes();
